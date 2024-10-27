@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Gallery</h2>
+<div>
+    {% for photo in photos %}
+    <div>
+        <h3>{{ photo.title }}</h3>
+        <img src="{{ photo.image.url }}" alt="{{ photo.title }}" width="300">
+        <p>{{ photo.description }}</p>
+    </div>
+    {% empty %}
+    <p>No photos uploaded yet.</p>
+    {% endfor %}
+</div>
+{% endblock %}
